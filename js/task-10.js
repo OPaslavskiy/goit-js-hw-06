@@ -5,23 +5,30 @@ function getRandomHexColor() {
 const input = document.querySelector("input");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
-const divBoxes = document.querySelector(".boxes");
+const divBoxes = document.querySelector("#boxes");
 
 input.addEventListener("input", numberOf);
 function numberOf() {
-  let number = Number(input.value);
-  console.log(number);
-  return number;
+  let amount = Number(input.value);
+  return amount;
 }
 
-createBtn.addEventListener("click", creatDivs);
+createBtn.addEventListener("click", createBoxes);
 const divArray = [];
+const styleArray = [];
+const styles = document.createElement("style");
+styleArray.push(styles);
 
-function creatDivs() {
+function createBoxes() {
   for (let i = 0; i < numberOf(); i += 1) {
     const div = document.createElement("div");
+    div.textContent = "qwerty";
+    div.classList.add(`div${[i]}`);
     divArray.push(div);
-    console.log(divArray);
+
+    const styleOfDiv = 30 + [i] * 10;
+    console.log(styleOfDiv);
   }
+  divBoxes.append(...divArray);
+  divBoxes.before(...styleArray);
 }
-divBoxes.prepend(...divArray);

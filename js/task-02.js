@@ -17,7 +17,7 @@ function creatItem() {
     li.classList.add("item");
     itemArray.push(li);
   }
+  list.append(...itemArray);
 }
 
 creatItem();
-list.append(...itemArray);
