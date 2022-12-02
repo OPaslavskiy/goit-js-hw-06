@@ -10,7 +10,7 @@ changeColorBtn.addEventListener("click", changeColorOfBody);
 
 let colorForBody = "";
 
-function changeColorOfBody(event) {
+function changeColorOfBody() {
   colorForBody = `body{background-color: ${getRandomHexColor()};}`;
 
   styleOfDocument.insertAdjacentHTML("beforeend", colorForBody);
