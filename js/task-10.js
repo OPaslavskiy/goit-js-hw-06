@@ -6,6 +6,7 @@ const input = document.querySelector("input");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 const divBoxes = document.querySelector("#boxes");
+const head = document.querySelector("head");
 
 input.addEventListener("input", numberOf);
 function numberOf() {
@@ -14,21 +15,31 @@ function numberOf() {
 }
 
 createBtn.addEventListener("click", createBoxes);
-const divArray = [];
-const styleArray = [];
-const styles = document.createElement("style");
-styleArray.push(styles);
-
+let divArray = [];
+let styleArray;
 function createBoxes() {
   for (let i = 0; i < numberOf(); i += 1) {
     const div = document.createElement("div");
-    div.textContent = "qwerty";
-    div.classList.add(`div${[i]}`);
+    div.classList.add(`div_${[i]}`);
     divArray.push(div);
 
     const styleOfDiv = 30 + [i] * 10;
-    console.log(styleOfDiv);
+    styleArray = `<style>
+    .div_${[i]} {
+      margin-left: auto;
+      margin-right: auto;
+      width: ${styleOfDiv}px;
+      height: ${styleOfDiv}px;
+      background-color: ${getRandomHexColor()};
+    }
+    </style>`;
+
+    head.insertAdjacentHTML("beforeend", styleArray);
   }
   divBoxes.append(...divArray);
-  divBoxes.before(...styleArray);
+}
+
+destroyBtn.addEventListener("click", clearBoxes);
+function clearBoxes() {
+  divBoxes.innerHTML = "";
 }
