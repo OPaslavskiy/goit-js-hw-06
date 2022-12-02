@@ -8,9 +8,10 @@ const destroyBtn = document.querySelector("[data-destroy]");
 const divBoxes = document.querySelector("#boxes");
 const head = document.querySelector("head");
 
+let amount;
 input.addEventListener("input", numberOf);
 function numberOf() {
-  let amount = Number(input.value);
+  amount = Number(input.value);
   return amount;
 }
 
@@ -42,4 +43,5 @@ function createBoxes() {
 destroyBtn.addEventListener("click", clearBoxes);
 function clearBoxes() {
   divBoxes.innerHTML = "";
+  divArray = [];
 }
