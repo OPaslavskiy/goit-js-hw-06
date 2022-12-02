@@ -20,5 +20,4 @@ function creatItem() {
 }
 
 creatItem();
-
 list.append(...itemArray);
