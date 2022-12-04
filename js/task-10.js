@@ -18,7 +18,10 @@ function numberOf() {
 createBtn.addEventListener("click", createBoxes);
 let divArray = [];
 let styleArray;
+
 function createBoxes() {
+  divBoxes.innerHTML = "";
+  divArray = [];
   for (let i = 0; i < numberOf(); i += 1) {
     const div = document.createElement("div");
     div.classList.add(`div_${[i]}`);

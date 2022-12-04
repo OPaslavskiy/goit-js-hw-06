@@ -10,14 +10,14 @@ function onFormSubmit(event) {
     alert("Dude, fill in all the fields");
   }
 
-  const email = formElement.email.value;
-  const password = formElement.password.value;
-  const formData = {
-    email,
-    password,
-  };
+  // const email = formElement.email.value;
+  // const password = formElement.password.value;
+  // const formData = {
+  //   email,
+  //   password,
+  // };
 
-  //   const formData = new FormData(event.currentTarget);
+  const formData = new FormData(event.currentTarget);
 
   console.log(formData);
   submitForm.reset();
