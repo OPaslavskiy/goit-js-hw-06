@@ -4,8 +4,8 @@ const article = document.querySelector(`#text`);
 input.addEventListener("input", changeSizeOfArticle);
 
 let sizeOfArticle = "";
+console.dir(article.style);
 
 function changeSizeOfArticle() {
-  sizeOfArticle = `<style>#text{font-size: ${input.value}px;}</style>`;
-  input.insertAdjacentHTML("beforebegin", sizeOfArticle);
+  article.style.fontSize = `${input.value}px`;
 }
